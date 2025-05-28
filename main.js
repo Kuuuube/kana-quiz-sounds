@@ -66,6 +66,8 @@ const kana_dict = {
 
 let correct_answer = '';
 
+let started = false;
+
 function check_all(element_selector) {
     let trs = document.querySelector(element_selector);
     let tds = trs.children;
@@ -125,7 +127,9 @@ function switch_tab() {
     for (const tab_selector of tab_selectors) {
         tab_selector.classList.toggle("selected-tab");
     }
-    set_audio();
+    if (started) {
+        set_audio();
+    }
 }
 
 function get_random_character() {
@@ -181,6 +185,7 @@ for (const kana_item of kana_items) {
 }
 
 document.querySelector("#start-button").addEventListener("click", () => {
+    started = true;
     document.querySelector("#start-button").hidden = true;
 
     document.querySelector("#kana-audio").hidden = false;
