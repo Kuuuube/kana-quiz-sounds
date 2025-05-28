@@ -150,7 +150,7 @@ function highlight_answer(answer, highlight_class) {
             kana_box.parentElement.classList.add(highlight_class);
             setTimeout(() => {
                 kana_box.parentElement.classList.remove(highlight_class);
-            }, 1000);
+            }, 500);
         }
     }
 }

@@ -232,6 +232,7 @@ ul#tools li a {
 td:has(.kana) {
     cursor: pointer;
     user-select: none;
+    transition: background-color 0.8s cubic-bezier(0,0,0,1);
 }
 
 td:has(.kana):hover {
