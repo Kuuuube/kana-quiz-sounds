@@ -234,3 +234,8 @@ td:has(.kana) {
 td:has(.kana):hover {
     background-color: var(--light-gray);
 }
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
