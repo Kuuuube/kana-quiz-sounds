@@ -172,6 +172,7 @@ for (const kana_item of kana_items) {
 
 document.querySelector("#start-button").addEventListener("click", () => {
     document.querySelector("#start-button").hidden = true;
+
     document.querySelector("#kana-audio").hidden = false;
     document.querySelector("#reveal-button").hidden = false;
     document.querySelector("#skip-button").hidden = false;
