@@ -144,7 +144,7 @@ function get_random_character() {
 function set_audio() {
     const new_character = get_random_character();
     const kana_audio = document.querySelector("#kana-audio");
-    const audio_variation_count = 3;
+    const audio_variation_count = 4;
     kana_audio.src = "audio/" + Math.floor(Math.random() * audio_variation_count) + "/" + new_character[1] + ".mp3";
     correct_answer = new_character[0];
 }
