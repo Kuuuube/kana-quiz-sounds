@@ -130,7 +130,7 @@ function get_random_character() {
 function set_audio() {
     const new_character = get_random_character();
     const kana_audio = document.querySelector("#kana-audio");
-    kana_audio.src = "audio/" + new_character[1] + "_" + Math.floor(Math.random() * 1) + ".mp3";
+    kana_audio.src = "audio/" + new_character[1] + "_" + Math.floor(Math.random() * 2) + ".mp3";
     correct_answer = new_character[0];
 }
 
