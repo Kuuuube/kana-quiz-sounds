@@ -140,16 +140,6 @@ h2 .checkall {
     margin-top: .8em;
 }
 
-#input_box {
-    width: 16em;
-    border: 1px solid var(--input-border);
-    padding: 6px;
-    text-align: center;
-    font-size: 100%;
-    color: var(--text-color);
-    background-color: var(--dark-gray);
-}
-
 ul#tools, #count {
     margin-top: 1em;
     font-size: 78%;
