@@ -169,6 +169,7 @@ function set_audio() {
     const enabled_speakers = get_enabled_speakers();
     kana_audio.src = "audio/" + enabled_speakers[Math.floor(Math.random() * enabled_speakers.length)] + "/" + new_character[1] + ".mp3";
     correct_answer = new_character[0];
+    pause_score = false;
 }
 
 function update_score(correct) {
@@ -189,7 +190,6 @@ function handle_answer(character) {
         highlight_answer(character, "correct-answer");
         update_score(true);
         setTimeout(set_audio, 1000);
-        pause_score = false;
     } else {
         highlight_answer(character, "wrong-answer");
         update_score(false);
