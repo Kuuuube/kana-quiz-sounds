@@ -135,9 +135,11 @@ function switch_tab() {
 function get_random_character() {
     let character = ['', ''];
     const checked_characters = get_checked();
+    let i = 0;
     do {
         character = checked_characters[Math.floor(Math.random() * checked_characters.length)];
-    } while (character[0] === correct_answer);
+        i++;
+    } while (character[0] === correct_answer && i < 10);
     return character;
 }
 
