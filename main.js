@@ -190,7 +190,10 @@ document.querySelector("#start-button").addEventListener("click", () => {
     started = true;
     document.querySelector("#start-button").hidden = true;
 
-    document.querySelector("#kana-audio").hidden = false;
+    const audio = document.querySelector("#kana-audio");
+    audio.hidden = false;
+    audio.autoplay = true;
+
     document.querySelector("#reveal-button").hidden = false;
     document.querySelector("#skip-button").hidden = false;
     set_audio();
