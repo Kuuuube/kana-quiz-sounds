@@ -170,6 +170,9 @@ function set_audio() {
 }
 
 function update_score(correct) {
+    if (!started) {
+        return;
+    }
     if (correct) {
         correct_answers += 1;
     }
