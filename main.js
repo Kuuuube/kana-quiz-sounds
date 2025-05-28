@@ -69,6 +69,8 @@ let started = false;
 let correct_answers = 0;
 let total_answers = 0;
 
+let pause_score = false;
+
 function check_all(element_selector) {
     let trs = document.querySelector(element_selector);
     let tds = trs.children;
@@ -170,11 +172,13 @@ function set_audio() {
 }
 
 function update_score(correct) {
-    if (!started) {
+    if (!started || pause_score) {
         return;
     }
     if (correct) {
         correct_answers += 1;
+    } else {
+        pause_score = true;
     }
     total_answers += 1;
     document.querySelector("#score").textContent = correct_answers + "/" + total_answers;
@@ -185,6 +189,7 @@ function handle_answer(character) {
         highlight_answer(character, "correct-answer");
         update_score(true);
         setTimeout(set_audio, 1000);
+        pause_score = false;
     } else {
         highlight_answer(character, "wrong-answer");
         update_score(false);
