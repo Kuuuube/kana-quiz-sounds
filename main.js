@@ -66,6 +66,9 @@ let correct_answer = '';
 
 let started = false;
 
+let correct_answers = 0;
+let total_answers = 0;
+
 function check_all(element_selector) {
     let trs = document.querySelector(element_selector);
     let tds = trs.children;
@@ -166,12 +169,22 @@ function set_audio() {
     correct_answer = new_character[0];
 }
 
+function update_score(correct) {
+    if (correct) {
+        correct_answers += 1;
+    }
+    total_answers += 1;
+    document.querySelector("#score").textContent = correct_answers + "/" + total_answers;
+}
+
 function handle_answer(character) {
     if (character === correct_answer) {
         highlight_answer(character, "correct-answer");
+        update_score(true);
         setTimeout(set_audio, 1000);
     } else {
         highlight_answer(character, "wrong-answer");
+        update_score(false);
     }
 }
 

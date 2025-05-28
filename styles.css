@@ -286,3 +286,8 @@ td:has(.kana):hover {
 	content: var(--speaker-button);
     user-select: none;
 }
+
+.score-container {
+    float: right;
+    font-size: 78%;
+}
