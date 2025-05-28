@@ -21,6 +21,31 @@
     --speaker-button: url(play-dark.png);
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+        --border-color: #dae2ef;
+        --header-color: #8e6264;
+        --header-color2: #6f4749;
+        --link-color: #4d99b7;
+
+        --input-border: #eeeeee;
+
+        --text-color: #000000;
+
+        --lighter-gray: rgb(211, 211, 211);
+        --light-gray: #f7f7f7;
+        --medium-gray: #ffffff;
+        --dark-gray: #eef5ed;
+
+        --transparent: rgba(0, 0, 0, 0);
+
+        --correct-answer: #5dff57;
+        --wrong-answer: #ff4848;
+
+        --speaker-button: url(play-light.png);
+    }
+}
+
 body {
     font-family: Verdana;
     background-color: var(--dark-gray);
@@ -85,7 +110,7 @@ td {
 	margin:1.5em auto;
 	width:46em;
 	padding:0;
-	background-color:rgb(50, 50, 50);
+	background-color:var(--medium-gray);
 	border-radius:3px;
 }
 
