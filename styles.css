@@ -88,7 +88,8 @@ h3 {
 	border-bottom: 1px dotted var(--header-color2);
 	padding-bottom: 9px;
 	padding-left: .4em;
-	margin-top: 1.6em;
+	margin-top: 0.4em;
+    margin-bottom: 0.4em;
 }
 
 .checkall a {
@@ -227,6 +228,7 @@ ul#tools li a {
 
 td:has(.kana) {
     cursor: pointer;
+    user-select: none;
 }
 
 td:has(.kana):hover {
