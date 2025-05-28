@@ -1,4 +1,4 @@
-let kana = {
+const kana = {
     'hsingle': { 'あ': 'a', 'い': 'i', 'う': 'u', 'え': 'e', 'お': 'o' },
     'hk': { 'か': 'ka', 'き': 'ki', 'く': 'ku', 'け': 'ke', 'こ': 'ko' },
     'hs': { 'さ': 'sa', 'し': 'shi', 'す': 'su', 'せ': 'se', 'そ': 'so' },
@@ -60,6 +60,8 @@ let kana = {
     'kdp': { 'ピャ': 'pya', 'ピュ': 'pyu', 'ピョ': 'pyo' },
 }
 
+let correct_answer = '';
+
 function check_all(element_selector) {
     let trs = document.querySelector(element_selector);
     let tds = trs.children;
@@ -116,15 +118,70 @@ function switch_tab() {
     }
 }
 
-function set_audio() {
-    const kana_audio = document.querySelector("#kana-audio");
-    kana_audio.src = "audio/a_1.mp3";
+function get_random_character() {
+    let character = ['', ''];
+    const checked_characters = get_checked();
+    do {
+        character = checked_characters[Math.floor(Math.random() * checked_characters.length)];
+    } while (character[0] === correct_answer);
+    return character;
 }
 
-set_audio();
-setup_checkalls()
+function set_audio() {
+    const new_character = get_random_character();
+    const kana_audio = document.querySelector("#kana-audio");
+    kana_audio.src = "audio/" + new_character[1] + "_" + Math.floor(Math.random() * 1) + ".mp3";
+    correct_answer = new_character[0];
+}
+
+function handle_answer(character) {
+    if (character === correct_answer) {
+        highlight_answer(character, "correct-answer");
+        setTimeout(set_audio, 1000);
+    } else {
+        highlight_answer(character, "wrong-answer");
+    }
+}
+
+function highlight_answer(answer, highlight_class) {
+    const kana_boxes = document.querySelectorAll(".kana");
+    for (const kana_box of kana_boxes) {
+        if (kana_box.innerText === answer) {
+            kana_box.parentElement.classList.add(highlight_class);
+            setTimeout(() => {
+                kana_box.parentElement.classList.remove(highlight_class);
+            }, 1000);
+        }
+    }
+}
+
+setup_checkalls();
 
 const tab_selectors = document.querySelectorAll(".kana-tab-selector");
 for (const tab_selector of tab_selectors) {
     tab_selector.addEventListener("click", switch_tab);
 }
+
+const kana_items = document.querySelectorAll("td");
+for (const kana_item of kana_items) {
+    kana_item.addEventListener("click", (e) => {
+        const selected_character = e.target.innerText;
+        handle_answer(selected_character);
+    });
+}
+
+document.querySelector("#start-button").addEventListener("click", () => {
+    document.querySelector("#start-button").hidden = true;
+    document.querySelector("#kana-audio").hidden = false;
+    document.querySelector("#reveal-button").hidden = false;
+    document.querySelector("#skip-button").hidden = false;
+    set_audio();
+});
+
+document.querySelector("#skip-button").addEventListener("click", () => {
+    set_audio();
+});
+
+document.querySelector("#reveal-button").addEventListener("click", () => {
+    highlight_answer(correct_answer, "correct-answer");
+});

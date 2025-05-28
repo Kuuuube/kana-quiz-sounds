@@ -13,6 +13,9 @@
     --dark-gray: rgb(34, 34, 34);
 
     --transparent: rgba(0, 0, 0, 0);
+
+    --correct-answer: #048600;
+    --wrong-answer: #860000;
 }
 
 body {
@@ -62,7 +65,7 @@ td {
 #top-container {
     margin: auto;
     width: 42em;
-    padding: .7em 2em 0em 2em;
+    padding: .7em 2em 1.4em 2em;
     background-color: var(--medium-gray);
     border-radius: 3px;
 }
@@ -237,5 +240,13 @@ td:has(.kana):hover {
 
 .flex-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+.correct-answer {
+    background-color: var(--correct-answer) !important;
+}
+
+.wrong-answer {
+    background-color: var(--wrong-answer) !important;
 }
