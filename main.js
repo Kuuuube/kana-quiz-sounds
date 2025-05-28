@@ -178,6 +178,9 @@ for (const tab_selector of tab_selectors) {
 
 const kana_items = document.querySelectorAll("td");
 for (const kana_item of kana_items) {
+    if (kana_item.querySelectorAll("input").length > 0) {
+        continue;
+    }
     kana_item.addEventListener("click", (e) => {
         const selected_character = e.target.innerText;
         handle_answer(selected_character);
