@@ -17,6 +17,8 @@
 
     --correct-answer: #048600;
     --wrong-answer: #860000;
+
+    --speaker-button: url(play-dark.png);
 }
 
 body {
@@ -77,6 +79,18 @@ td {
     padding: 0.1em 1.4em 1.4em 1.4em;
     background-color: var(--medium-gray);
     border-radius: 3px;
+}
+
+#options {
+	margin:1.5em auto;
+	width:46em;
+	padding:0;
+	background-color:rgb(50, 50, 50);
+	border-radius:3px;
+}
+
+#options_inner {
+	padding:0 1.4em 1.4em 1.4em;
 }
 
 h2 {
@@ -251,4 +265,9 @@ td:has(.kana):hover {
 
 .wrong-answer {
     background-color: var(--wrong-answer) !important;
+}
+
+.speaker-button {
+	content: var(--speaker-button);
+    user-select: none;
 }
