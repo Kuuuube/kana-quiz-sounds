@@ -224,3 +224,11 @@ ul#tools li a {
 #kana-tabs > h3 {
     flex: 1;
 }
+
+td:has(.kana) {
+    cursor: pointer;
+}
+
+td:has(.kana):hover {
+    background-color: var(--light-gray);
+}
