@@ -111,7 +111,11 @@ td {
 	width:46em;
 	padding:0;
 	background-color:var(--medium-gray);
-	border-radius:3px;
+	border-radius: 3px;
+}
+
+#options > h2 {
+    border-radius: 3px 3px 0px 0px;
 }
 
 #options_inner {
@@ -123,7 +127,7 @@ h2 {
     color: var(--header-color);
     margin: 0;
     padding: .3em .5em;
-    border-radius: 3px 3px 0px 0px;
+    border-radius: 3px;
 }
 
 h3 {
