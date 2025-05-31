@@ -227,21 +227,17 @@ function highlight_answer(answer, highlight_class) {
     }
 }
 
-const original_kana_positions = [];
+const table_identifiers = ["#hiragana-table", "#hiragana-combinations-table", "#katakana-table", "#katakana-combinations-table"];
+const original_kana_positions = get_kana_positions();
 
-function shuffle_kana() {
-    const tables = [document.querySelector("#hiragana-table"), document.querySelector("#hiragana-combinations-table"), document.querySelector("#katakana-table"), document.querySelector("#katakana-combinations-table")];
-    for (const table of tables) {
+function get_kana_positions() {
+    const kana_positions = [];
+    for (const table_identifier of table_identifiers) {
+        const table = document.querySelector(table_identifier);
         const kana_cells = table.querySelectorAll(".kana");
-        if (original_kana_positions.length < tables.length) {
-            original_kana_positions.push(Array.from(kana_cells).map((x) => { return x.innerText; }));
-        }
-        const kana_cells_shuffled = Array.from(kana_cells).map((x) => { return x.innerText; });
-        shuffle_array(kana_cells_shuffled);
-        for (let i = 0; i < kana_cells.length; i++) {
-            kana_cells[i].innerText = kana_cells_shuffled[i];
-        }
+        kana_positions.push(Array.from(kana_cells).map((x) => { return x.innerText; }));
     }
+    return kana_positions;
 }
 
 function revert_kana() {
@@ -250,6 +246,18 @@ function revert_kana() {
         const kana_cells = tables[i].querySelectorAll(".kana");
         for (let j = 0; j < kana_cells.length; j++) {
             kana_cells[j].innerText = original_kana_positions[i][j];
+        }
+    }
+}
+
+function shuffle_kana() {
+    const tables = [document.querySelector("#hiragana-table"), document.querySelector("#hiragana-combinations-table"), document.querySelector("#katakana-table"), document.querySelector("#katakana-combinations-table")];
+    for (const table of tables) {
+        const kana_cells = table.querySelectorAll(".kana");
+        const kana_cells_shuffled = Array.from(kana_cells).map((x) => { return x.innerText; });
+        shuffle_array(kana_cells_shuffled);
+        for (let i = 0; i < kana_cells.length; i++) {
+            kana_cells[i].innerText = kana_cells_shuffled[i];
         }
     }
 }
