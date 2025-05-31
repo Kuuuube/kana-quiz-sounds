@@ -1,65 +1,61 @@
 const kana_dict = {
-    'hiragana': {
-        'hsingle': { 'あ': 'a', 'い': 'i', 'う': 'u', 'え': 'e', 'お': 'o' },
-        'hk': { 'か': 'ka', 'き': 'ki', 'く': 'ku', 'け': 'ke', 'こ': 'ko' },
-        'hs': { 'さ': 'sa', 'し': 'shi', 'す': 'su', 'せ': 'se', 'そ': 'so' },
-        'ht': { 'た': 'ta', 'ち': 'chi', 'つ': 'tsu', 'て': 'te', 'と': 'to' },
-        'hn': { 'な': 'na', 'に': 'ni', 'ぬ': 'nu', 'ね': 'ne', 'の': 'no' },
-        'hh': { 'は': 'ha', 'ひ': 'hi', 'ふ': 'fu', 'へ': 'he', 'ほ': 'ho' },
-        'hm': { 'ま': 'ma', 'み': 'mi', 'む': 'mu', 'め': 'me', 'も': 'mo' },
-        'hy': { 'や': 'ya', 'ゆ': 'yu', 'よ': 'yo' },
-        'hr': { 'ら': 'ra', 'り': 'ri', 'る': 'ru', 'れ': 're', 'ろ': 'ro' },
-        'hw': { 'わ': 'wa', 'を': 'wo' },
-        'hn1': { 'ん': 'n' },
-        'hg': { 'が': 'ga', 'ぎ': 'gi', 'ぐ': 'gu', 'げ': 'ge', 'ご': 'go' },
-        'hz': { 'ざ': 'za', 'じ/ぢ': 'ji', 'ず/づ': 'zu', 'ぜ': 'ze', 'ぞ': 'zo' },
-        'hd': { 'だ': 'da', 'で': 'de', 'ど': 'do' },
-        'hb': { 'ば': 'ba', 'び': 'bi', 'ぶ': 'bu', 'べ': 'be', 'ぼ': 'bo' },
-        'hp': { 'ぱ': 'pa', 'ぴ': 'pi', 'ぷ': 'pu', 'ぺ': 'pe', 'ぽ': 'po' },
+    'あ': 'a', 'い': 'i', 'う': 'u', 'え': 'e', 'お': 'o',
+    'か': 'ka', 'き': 'ki', 'く': 'ku', 'け': 'ke', 'こ': 'ko',
+    'さ': 'sa', 'し': 'shi', 'す': 'su', 'せ': 'se', 'そ': 'so',
+    'た': 'ta', 'ち': 'chi', 'つ': 'tsu', 'て': 'te', 'と': 'to',
+    'な': 'na', 'に': 'ni', 'ぬ': 'nu', 'ね': 'ne', 'の': 'no',
+    'は': 'ha', 'ひ': 'hi', 'ふ': 'fu', 'へ': 'he', 'ほ': 'ho',
+    'ま': 'ma', 'み': 'mi', 'む': 'mu', 'め': 'me', 'も': 'mo',
+    'や': 'ya', 'ゆ': 'yu', 'よ': 'yo',
+    'ら': 'ra', 'り': 'ri', 'る': 'ru', 'れ': 're', 'ろ': 'ro',
+    'わ': 'wa', 'を': 'wo',
+    'ん': 'n',
+    'が': 'ga', 'ぎ': 'gi', 'ぐ': 'gu', 'げ': 'ge', 'ご': 'go',
+    'ざ': 'za', 'じ/ぢ': 'ji', 'ず/づ': 'zu', 'ぜ': 'ze', 'ぞ': 'zo',
+    'だ': 'da', 'で': 'de', 'ど': 'do',
+    'ば': 'ba', 'び': 'bi', 'ぶ': 'bu', 'べ': 'be', 'ぼ': 'bo',
+    'ぱ': 'pa', 'ぴ': 'pi', 'ぷ': 'pu', 'ぺ': 'pe', 'ぽ': 'po',
 
-        'hdk': { 'きゃ': 'kya', 'きゅ': 'kyu', 'きょ': 'kyo' },
-        'hds': { 'しゃ': 'sha', 'しゅ': 'shu', 'しょ': 'sho' },
-        'hdc': { 'ちゃ': 'cha', 'ちゅ': 'chu', 'ちょ': 'cho' },
-        'hdn': { 'にゃ': 'nya', 'にゅ': 'nyu', 'にょ': 'nyo' },
-        'hdh': { 'ひゃ': 'hya', 'ひゅ': 'hyu', 'ひょ': 'hyo' },
-        'hdm': { 'みゃ': 'mya', 'みゅ': 'myu', 'みょ': 'myo' },
-        'hdr': { 'りゃ': 'rya', 'りゅ': 'ryu', 'りょ': 'ryo' },
-        'hdg': { 'ぎゃ': 'gya', 'ぎゅ': 'gyu', 'ぎょ': 'gyo' },
-        'hdj': { 'じゃ/ぢゃ': 'ja', 'じゅ/ぢゅ': 'ju', 'じょ/ぢょ': 'jo' },
-        'hdb': { 'びゃ': 'bya', 'びゅ': 'byu', 'びょ': 'byo' },
-        'hdp': { 'ぴゃ': 'pya', 'ぴゅ': 'pyu', 'ぴょ': 'pyo' },
-    },
+    'きゃ': 'kya', 'きゅ': 'kyu', 'きょ': 'kyo',
+    'しゃ': 'sha', 'しゅ': 'shu', 'しょ': 'sho',
+    'ちゃ': 'cha', 'ちゅ': 'chu', 'ちょ': 'cho',
+    'にゃ': 'nya', 'にゅ': 'nyu', 'にょ': 'nyo',
+    'ひゃ': 'hya', 'ひゅ': 'hyu', 'ひょ': 'hyo',
+    'みゃ': 'mya', 'みゅ': 'myu', 'みょ': 'myo',
+    'りゃ': 'rya', 'りゅ': 'ryu', 'りょ': 'ryo',
+    'ぎゃ': 'gya', 'ぎゅ': 'gyu', 'ぎょ': 'gyo',
+    'じゃ/ぢゃ': 'ja', 'じゅ/ぢゅ': 'ju', 'じょ/ぢょ': 'jo',
+    'びゃ': 'bya', 'びゅ': 'byu', 'びょ': 'byo',
+    'ぴゃ': 'pya', 'ぴゅ': 'pyu', 'ぴょ': 'pyo',
 
-    'katakana': {
-        'ksingle': { 'ア': 'a', 'イ': 'i', 'ウ': 'u', 'エ': 'e', 'オ': 'o' },
-        'kk': { 'カ': 'ka', 'キ': 'ki', 'ク': 'ku', 'ケ': 'ke', 'コ': 'ko' },
-        'ks': { 'サ': 'sa', 'シ': 'shi', 'ス': 'su', 'セ': 'se', 'ソ': 'so' },
-        'kt': { 'タ': 'ta', 'チ': 'chi', 'ツ': 'tsu', 'テ': 'te', 'ト': 'to' },
-        'kn': { 'ナ': 'na', 'ニ': 'ni', 'ヌ': 'nu', 'ネ': 'ne', 'ノ': 'no' },
-        'kh': { 'ハ': 'ha', 'ヒ': 'hi', 'フ': 'fu', 'ヘ': 'he', 'ホ': 'ho' },
-        'km': { 'マ': 'ma', 'ミ': 'mi', 'ム': 'mu', 'メ': 'me', 'モ': 'mo' },
-        'ky': { 'ヤ': 'ya', 'ユ': 'yu', 'ヨ': 'yo' },
-        'kr': { 'ラ': 'ra', 'リ': 'ri', 'ル': 'ru', 'レ': 're', 'ロ': 'ro' },
-        'kw': { 'ワ': 'wa', 'ヲ': 'o' },
-        'kn1': { 'ン': 'n' },
-        'kg': { 'ガ': 'ga', 'ギ': 'gi', 'グ': 'gu', 'ゲ': 'ge', 'ゴ': 'go' },
-        'kz': { 'ザ': 'za', 'ジ/ヂ': 'ji', 'ズ/ヅ': 'zu', 'ゼ': 'ze', 'ゾ': 'zo' },
-        'kd': { 'ダ': 'da', 'デ': 'de', 'ド': 'do' },
-        'kb': { 'バ': 'ba', 'ビ': 'bi', 'ブ': 'bu', 'ベ': 'be', 'ボ': 'bo' },
-        'kp': { 'パ': 'pa', 'ピ': 'pi', 'プ': 'pu', 'ペ': 'pe', 'ポ': 'po' },
+    'ア': 'a', 'イ': 'i', 'ウ': 'u', 'エ': 'e', 'オ': 'o',
+    'カ': 'ka', 'キ': 'ki', 'ク': 'ku', 'ケ': 'ke', 'コ': 'ko',
+    'サ': 'sa', 'シ': 'shi', 'ス': 'su', 'セ': 'se', 'ソ': 'so',
+    'タ': 'ta', 'チ': 'chi', 'ツ': 'tsu', 'テ': 'te', 'ト': 'to',
+    'ナ': 'na', 'ニ': 'ni', 'ヌ': 'nu', 'ネ': 'ne', 'ノ': 'no',
+    'ハ': 'ha', 'ヒ': 'hi', 'フ': 'fu', 'ヘ': 'he', 'ホ': 'ho',
+    'マ': 'ma', 'ミ': 'mi', 'ム': 'mu', 'メ': 'me', 'モ': 'mo',
+    'ヤ': 'ya', 'ユ': 'yu', 'ヨ': 'yo',
+    'ラ': 'ra', 'リ': 'ri', 'ル': 'ru', 'レ': 're', 'ロ': 'ro',
+    'ワ': 'wa', 'ヲ': 'o',
+    'ン': 'n',
+    'ガ': 'ga', 'ギ': 'gi', 'グ': 'gu', 'ゲ': 'ge', 'ゴ': 'go',
+    'ザ': 'za', 'ジ/ヂ': 'ji', 'ズ/ヅ': 'zu', 'ゼ': 'ze', 'ゾ': 'zo',
+    'ダ': 'da', 'デ': 'de', 'ド': 'do',
+    'バ': 'ba', 'ビ': 'bi', 'ブ': 'bu', 'ベ': 'be', 'ボ': 'bo',
+    'パ': 'pa', 'ピ': 'pi', 'プ': 'pu', 'ペ': 'pe', 'ポ': 'po',
 
-        'kdk': { 'キャ': 'kya', 'キュ': 'kyu', 'キョ': 'kyo' },
-        'kds': { 'シャ': 'sha', 'シュ': 'shu', 'ショ': 'sho' },
-        'kdc': { 'チャ': 'cha', 'チュ': 'chu', 'チョ': 'cho' },
-        'kdn': { 'ニャ': 'nya', 'ニュ': 'nyu', 'ニョ': 'nyo' },
-        'kdh': { 'ヒャ': 'hya', 'ヒュ': 'hyu', 'ヒョ': 'hyo' },
-        'kdm': { 'ミャ': 'mya', 'ミュ': 'myu', 'ミョ': 'myo' },
-        'kdr': { 'リャ': 'rya', 'リュ': 'ryu', 'リョ': 'ryo' },
-        'kdg': { 'ギャ': 'gya', 'ギュ': 'gyu', 'ギョ': 'gyo' },
-        'kdj': { 'ジャ/ヂャ': 'ja', 'ジュ/ヂュ': 'ju', 'ジョ/ヂョ': 'jo' },
-        'kdb': { 'ビャ': 'bya', 'ビュ': 'byu', 'ビョ': 'byo' },
-        'kdp': { 'ピャ': 'pya', 'ピュ': 'pyu', 'ピョ': 'pyo' },
-    }
+    'キャ': 'kya', 'キュ': 'kyu', 'キョ': 'kyo',
+    'シャ': 'sha', 'シュ': 'shu', 'ショ': 'sho',
+    'チャ': 'cha', 'チュ': 'chu', 'チョ': 'cho',
+    'ニャ': 'nya', 'ニュ': 'nyu', 'ニョ': 'nyo',
+    'ヒャ': 'hya', 'ヒュ': 'hyu', 'ヒョ': 'hyo',
+    'ミャ': 'mya', 'ミュ': 'myu', 'ミョ': 'myo',
+    'リャ': 'rya', 'リュ': 'ryu', 'リョ': 'ryo',
+    'ギャ': 'gya', 'ギュ': 'gyu', 'ギョ': 'gyo',
+    'ジャ/ヂャ': 'ja', 'ジュ/ヂュ': 'ju', 'ジョ/ヂョ': 'jo',
+    'ビャ': 'bya', 'ビュ': 'byu', 'ビョ': 'byo',
+    'ピャ': 'pya', 'ピュ': 'pyu', 'ピョ': 'pyo',
 }
 
 let correct_answer = '';
@@ -101,15 +97,34 @@ function setup_checkalls() {
     document.querySelector("#katakana-combinations-uncheckall").addEventListener("click", () => {uncheck_all(".katakana-combinations-check")})
 }
 
+function get_columns(table_selector) {
+    const table = document.querySelector(table_selector);
+    const row_length = table.rows[0].cells.length;
+    const columns = Array.apply(null, Array(row_length)).map(() => { return []; });
+
+    for (let i = 0; i < table.rows.length; i++) {
+        const row = table.rows[i];
+        for (let j = 0; j < row.cells.length; j++) {
+            const cell = row.cells[j];
+            columns[j][i] = cell;
+        }
+    }
+    return columns;
+}
+
 function get_checked() {
-    const kanacheck = document.getElementsByClassName('kanacheck');
     const selected_tab = get_selected_tab();
+    const columns = [...get_columns("#" + selected_tab + "-table"), ...get_columns("#" + selected_tab + "-combinations-table")];
     const active = [];
-    for (let i = 0; i < kanacheck.length; i++) {
-        const cur = kanacheck[i];
-        if (cur.checked == true) {
-            for (const p in kana_dict[selected_tab][cur.id]) {
-                active.push([p, kana_dict[selected_tab][cur.id][p]]);
+    for (const column of columns) {
+        if (!column[0].querySelector(".kanacheck").checked) {
+            continue;
+        }
+        // [0] = column header
+        for (let i = 1; i < column.length; i++) {
+            const cell_text = column[i].innerText;
+            if (cell_text && cell_text.length > 0) {
+                active.push([cell_text, kana_dict[cell_text]]);
             }
         }
     }
