@@ -227,14 +227,29 @@ function highlight_answer(answer, highlight_class) {
     }
 }
 
+const original_kana_positions = [];
+
 function shuffle_kana() {
     const tables = [document.querySelector("#hiragana-table"), document.querySelector("#hiragana-combinations-table"), document.querySelector("#katakana-table"), document.querySelector("#katakana-combinations-table")];
     for (const table of tables) {
         const kana_cells = table.querySelectorAll(".kana");
+        if (original_kana_positions.length < tables.length) {
+            original_kana_positions.push(Array.from(kana_cells).map((x) => { return x.innerText; }));
+        }
         const kana_cells_shuffled = Array.from(kana_cells).map((x) => { return x.innerText; });
         shuffle_array(kana_cells_shuffled);
         for (let i = 0; i < kana_cells.length; i++) {
             kana_cells[i].innerText = kana_cells_shuffled[i];
+        }
+    }
+}
+
+function revert_kana() {
+    const tables = [document.querySelector("#hiragana-table"), document.querySelector("#hiragana-combinations-table"), document.querySelector("#katakana-table"), document.querySelector("#katakana-combinations-table")];
+    for (let i = 0; i < tables.length; i++) {
+        const kana_cells = tables[i].querySelectorAll(".kana");
+        for (let j = 0; j < kana_cells.length; j++) {
+            kana_cells[j].innerText = original_kana_positions[i][j];
         }
     }
 }
@@ -293,3 +308,4 @@ for (const speaker_button of speaker_buttons) {
 }
 
 document.querySelector("#shuffle-kana").addEventListener("click", shuffle_kana);
+document.querySelector("#revert-kana").addEventListener("click", revert_kana);
