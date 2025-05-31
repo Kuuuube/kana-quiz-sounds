@@ -258,10 +258,14 @@ function shuffle_kana() {
     for (const table_identifier of table_identifiers) {
         const table = document.querySelector(table_identifier);
         const kana_cells = table.querySelectorAll(".kana");
-        const kana_cells_shuffled = Array.from(kana_cells).map((x) => { return x.innerText; });
+        const kana_cells_shuffled = get_checked_table(table_identifier).map((x) => x[0]);
         shuffle_array(kana_cells_shuffled);
+        let j = 0;
         for (let i = 0; i < kana_cells.length; i++) {
-            kana_cells[i].innerText = kana_cells_shuffled[i];
+            if (kana_cells_shuffled.includes(kana_cells[i].innerText)) {
+                kana_cells[i].innerText = kana_cells_shuffled[j];
+                j++;
+            }
         }
     }
 }
