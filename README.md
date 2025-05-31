@@ -1,3 +1,3 @@
 # Kana Quiz Sounds
 
-Kana quiz using sounds instead of visuals. Go to https://kuuuube.github.io/kana-quiz-sounds.
+Hiragana and Katakana learning tool without romaji. Go to https://kuuuube.github.io/kana-quiz-sounds.
