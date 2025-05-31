@@ -120,9 +120,13 @@ function get_selected_tab() {
     return document.querySelector("#hiragana-tab").hidden ? "katakana" : "hiragana";
 }
 
-function switch_tab() {
+function switch_tab(tab_name) {
     const hiragana_tab = document.querySelector("#hiragana-tab");
     const katakana_tab = document.querySelector("#katakana-tab");
+
+    if (tab_name === "hiragana" && !hiragana_tab.hidden) { return; }
+    if (tab_name === "katakana" && !katakana_tab.hidden) { return; }
+
     hiragana_tab.hidden = !hiragana_tab.hidden;
     katakana_tab.hidden = !katakana_tab.hidden;
 
@@ -210,10 +214,8 @@ function highlight_answer(answer, highlight_class) {
 
 setup_checkalls();
 
-const tab_selectors = document.querySelectorAll(".kana-tab-selector");
-for (const tab_selector of tab_selectors) {
-    tab_selector.addEventListener("click", switch_tab);
-}
+document.querySelector("#hiragana-tab-selector").addEventListener("click", () => { switch_tab("hiragana") });
+document.querySelector("#katakana-tab-selector").addEventListener("click", () => { switch_tab("katakana") });
 
 const kana_items = document.querySelectorAll("td");
 for (const kana_item of kana_items) {
