@@ -295,3 +295,14 @@ td:has(.kana):hover {
     float: right;
     font-size: 78%;
 }
+
+.fakebutton {
+    width: fit-content;
+    user-select: none;
+    transition: 0.1s filter linear;
+}
+
+.fakebutton:hover {
+    filter: contrast(125%);
+    cursor: pointer;
+}
