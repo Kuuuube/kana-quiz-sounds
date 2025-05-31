@@ -67,6 +67,9 @@ let total_answers = 0;
 
 let pause_score = false;
 
+const table_identifiers = ["#hiragana-table", "#hiragana-combinations-table", "#katakana-table", "#katakana-combinations-table"];
+const original_kana_positions = get_kana_positions();
+
 function check_all(element_selector) {
     let trs = document.querySelector(element_selector);
     let tds = trs.children;
@@ -226,9 +229,6 @@ function highlight_answer(answer, highlight_class) {
         }
     }
 }
-
-const table_identifiers = ["#hiragana-table", "#hiragana-combinations-table", "#katakana-table", "#katakana-combinations-table"];
-const original_kana_positions = get_kana_positions();
 
 function get_kana_positions() {
     const kana_positions = [];
