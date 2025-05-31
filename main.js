@@ -241,9 +241,9 @@ function get_kana_positions() {
 }
 
 function revert_kana() {
-    const tables = [document.querySelector("#hiragana-table"), document.querySelector("#hiragana-combinations-table"), document.querySelector("#katakana-table"), document.querySelector("#katakana-combinations-table")];
-    for (let i = 0; i < tables.length; i++) {
-        const kana_cells = tables[i].querySelectorAll(".kana");
+    for (let i = 0; i < table_identifiers.length; i++) {
+        const table = document.querySelector(table_identifiers[i]);
+        const kana_cells = table.querySelectorAll(".kana");
         for (let j = 0; j < kana_cells.length; j++) {
             kana_cells[j].innerText = original_kana_positions[i][j];
         }
@@ -251,8 +251,8 @@ function revert_kana() {
 }
 
 function shuffle_kana() {
-    const tables = [document.querySelector("#hiragana-table"), document.querySelector("#hiragana-combinations-table"), document.querySelector("#katakana-table"), document.querySelector("#katakana-combinations-table")];
-    for (const table of tables) {
+    for (const table_identifier of table_identifiers) {
+        const table = document.querySelector(table_identifier);
         const kana_cells = table.querySelectorAll(".kana");
         const kana_cells_shuffled = Array.from(kana_cells).map((x) => { return x.innerText; });
         shuffle_array(kana_cells_shuffled);
