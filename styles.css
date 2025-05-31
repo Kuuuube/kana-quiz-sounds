@@ -242,6 +242,8 @@ ul#tools li a {
     display: inline-block;
     text-align: center;
     user-select: none;
+    background-color: var(--light-gray);
+    border-radius: 3px;
 }
 
 .kana-tab-selector.selected-tab {
