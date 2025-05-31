@@ -115,9 +115,8 @@ function get_columns(table_selector) {
     return columns;
 }
 
-function get_checked() {
-    const selected_tab = get_selected_tab();
-    const columns = [...get_columns("#" + selected_tab + "-table"), ...get_columns("#" + selected_tab + "-combinations-table")];
+function get_checked_table(table_identifier) {
+    const columns = get_columns(table_identifier);
     const active = [];
     for (const column of columns) {
         if (!column[0].querySelector(".kanacheck").checked) {
@@ -132,6 +131,11 @@ function get_checked() {
         }
     }
     return active;
+}
+
+function get_checked() {
+    const selected_tab = get_selected_tab();
+    return [...get_checked_table("#" + selected_tab + "-table"), ...get_checked_table("#" + selected_tab + "-combinations-table")];
 }
 
 function get_selected_tab() {
