@@ -100,7 +100,7 @@ td {
 
 #bottom-container {
     margin: 1.5em auto;
-    width: 46em;
+    width: fit-content;
     padding: 0.1em 1.4em 1.4em 1.4em;
     background-color: var(--medium-gray);
     border-radius: 3px;
@@ -299,7 +299,6 @@ td:has(.kana):hover {
 }
 
 .fakebutton {
-    width: fit-content;
     user-select: none;
     transition: 0.1s filter linear;
 }
@@ -307,4 +306,8 @@ td:has(.kana):hover {
 .fakebutton:hover {
     filter: contrast(125%);
     cursor: pointer;
+}
+
+#shuffle-kana {
+    width: fit-content;
 }

@@ -227,6 +227,26 @@ function highlight_answer(answer, highlight_class) {
     }
 }
 
+function shuffle_kana() {
+    const tables = [document.querySelector("#hiragana-table"), document.querySelector("#hiragana-combinations-table"), document.querySelector("#katakana-table"), document.querySelector("#katakana-combinations-table")];
+    for (const table of tables) {
+        const kana_cells = table.querySelectorAll(".kana");
+        const kana_cells_shuffled = Array.from(kana_cells).map((x) => { return x.innerText; });
+        shuffle_array(kana_cells_shuffled);
+        for (let i = 0; i < kana_cells.length; i++) {
+            kana_cells[i].innerText = kana_cells_shuffled[i];
+        }
+    }
+}
+
+/* Durstenfeld shuffle in-place */
+function shuffle_array(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 setup_checkalls();
 
 document.querySelector("#hiragana-tab-selector").addEventListener("click", () => { switch_tab("hiragana") });
@@ -271,3 +291,5 @@ for (const speaker_button of speaker_buttons) {
         audio.play();
     });
 }
+
+document.querySelector("#shuffle-kana").addEventListener("click", shuffle_kana);
